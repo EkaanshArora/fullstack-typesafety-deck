@@ -3,7 +3,7 @@ h4 {
 }
 
 .slidev-vclick-target {
-    transition: all 250ms ease;
+    transition: all 100ms ease;
 }
 
 .slidev-vclick-hidden {

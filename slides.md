@@ -65,23 +65,6 @@ preload: false
 
 </div>
 
-<!--
-
-# Agenda
-
-<v-clicks>
-
-- How does data flow in your app?
-- What is typesafety?
-- What we've been using
-- What's tRPC?
-- What does it look like?
-- Demo
-- How to get started?
-- When to not use?
-
-</v-clicks>
--->
 ---
 preload: false
 ---
@@ -102,7 +85,7 @@ id1(Database) <-- SQL --> id2(Backend) <-- REST --> id3(Frontend Client)
 # What is typesafety?
 <v-clicks>
 
-#### It's why people like Typescript.
+#### It's why people like TypeScript.
 #### The extent to which a programming language discourages or prevents type errors.
 #### Compiler red squiggly lines telling you that you're writing a bug
 <img src="/images/squiggly.png" width=350>
