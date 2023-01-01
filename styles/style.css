@@ -1,3 +1,11 @@
 h4 {
     margin: 1rem 0;
 }
+
+.slidev-vclick-target {
+    transition: all 250ms ease;
+}
+
+.slidev-vclick-hidden {
+    opacity: 0;
+}

@@ -30,9 +30,10 @@ drawings:
 
 ---
 layout: two-cols
+preload: false
 ---
 
-<div style="display: flex; place-items: center;flex-direction:column"> 
+<div style="display: flex; place-items: center;flex-direction:column" v-motion-fade>
 
 # About me
 
@@ -45,7 +46,7 @@ layout: two-cols
 
 ::right::
 
-<div style="display: flex; place-items: center;flex-direction:column;margin-top:35%"> 
+<div style="display: flex; place-items: center;flex-direction:column;margin-top:35%" v-motion-fade> 
 
 - Developer Advocate, <a style="color: rgba(221, 221, 221)" href="https://agora.io" target=_blank>Agora​</a>
 
@@ -82,10 +83,11 @@ layout: two-cols
 </v-clicks>
 -->
 ---
-
+preload: false
+---
 # What does full-stack look like?
 
-<div style="margin-left: 20%">
+<div style="margin-left: 20%" v-motion-fade>
 
 ```mermaid
 
@@ -102,7 +104,7 @@ id1(Database) <-- SQL --> id2(Backend) <-- REST --> id3(Frontend Client)
 
 #### It's why people like Typescript.
 #### The extent to which a programming language discourages or prevents type errors.
-#### Compiler red squiggly lines telling you you're makinga a mistake
+#### Compiler red squiggly lines telling you that you're writing a bug
 <img src="/images/squiggly.png" width=350>
 </v-clicks>
 
@@ -120,7 +122,7 @@ id1(Database) <-- SQL --> id2(Backend) <-- REST --> id3(Frontend Client)
 ```mermaid
 
 flowchart BT
-id1(Database) <-- SQL --> id2(Backend) <-- REST --> id3(Frontend Client)
+id1(Database) <-- DBQuery --> id2(Backend) <-- API --> id3(Frontend Client)
 
 ```
 </div>
@@ -139,9 +141,10 @@ id1(Database) <-- SQL --> id2(Backend) <-- REST --> id3(Frontend Client)
 ```mermaid
 
 flowchart BT
-id1(Database) <-- SQL --> id2(Backend) <-- REST --> id3(Frontend Client)
-linkStyle 0 stroke:#f00,stroke-width:2px;
-linkStyle 1 stroke:#f00,stroke-width:2px;
+id1(Database) <-- DBQuery --> id2(Backend) <-- API --> id3(Frontend Client)
+style id1 stroke:#f00,stroke-width:2px
+style id2 stroke:#f00,stroke-width:2px
+style id3 stroke:#f00,stroke-width:2px
 
 ```
 </div>
@@ -157,13 +160,30 @@ linkStyle 1 stroke:#f00,stroke-width:2px;
 ```mermaid
 
 flowchart BT
-id1(Database) <-- SQL --> id2(Backend) <-- REST --> id3(Frontend Client)
+id1(Database) <-- DBQuery --> id2(Backend) <-- API --> id3(Frontend Client)
 
 ```
 </div>
 
 ---
+preload: false
+---
 
+# What is fullstack typesafety?
+
+#### When you cross a boundary in your stack, do you have access to the previous system's type information?
+
+
+<div style="margin-left: 20%" v-motion-fade>
+
+```mermaid
+
+flowchart BT
+id1(mySQL) <-- SQL --> id2(Node) <-- REST --> id3(React)
+
+```
+</div>
+---
 
 # What is fullstack typesafety?
 
@@ -176,11 +196,9 @@ id1(Database) <-- SQL --> id2(Backend) <-- REST --> id3(Frontend Client)
 
 flowchart BT
 id1(mySQL) <-- SQL --> id2(Node) <-- REST --> id3(React)
-
+linkStyle 0 stroke:#f00,stroke-width:2px;
 ```
-<div v-click=1>
-<img src="/images/dberror.png" style="width: 60%;margin: auto"/>
-</div>
+<img src="/images/dberror.png" style="width: 60%;margin-left: 30%;margin-top: -30%"/>
 </div>
 
 ---
@@ -200,12 +218,28 @@ id1(mySQL) <-- Prisma --> id2(Node) <-- REST --> id3(React)
 linkStyle 0 stroke:#0f0,stroke-width:2px;
 
 ```
-<div v-click=0>
 <img src="/images/prisma2.svg" style="width: 50%;margin-top: -45%;margin-left: 35%"/>
 </div>
-<div v-click=1>
+
+---
+
+# What is fullstack typesafety?
+
+#### When you cross a boundary in your stack, do you have access to the previous system's type information?
+
+
+<div style="margin-left: 20%">
+
+```mermaid
+
+flowchart BT
+id1(mySQL) <-- Prisma --> id2(Node) <-- REST --> id3(React)
+linkStyle 0 stroke:#0f0,stroke-width:2px;
+linkStyle 1 stroke:#f00,stroke-width:2px;
+
+```
+<img src="/images/prisma2.svg" style="width: 50%;margin-top: -45%;margin-left: 35%"/>
 <img src="/images/undefined.png" style="width:70%;margin-top: -35%;margin-left: 25%"/>
-</div>
 </div>
 
 ---
@@ -224,8 +258,9 @@ linkStyle 0 stroke:#0f0,stroke-width:2px;
 linkStyle 1 stroke:#0f0,stroke-width:2px;
 
 ```
-<div v-click=1>
-<img src="https://i.giphy.com/media/g79am6uuZJKSc/giphy.webp" style="width: 60%;margin: auto"/>
+<div v-click=1 style="margin-left: 30%;margin-top: -30%">
+
+#### but you probably don't need GraphQL
 </div>
 </div>
 
@@ -247,19 +282,26 @@ linkStyle 1 stroke:#0f0,stroke-width:2px;
 
 ```
 <div v-click=1>
-<img src="https://i.giphy.com/media/AgO9VR2a9KW1MSP73I/giphy.webp" style="width: 60%;margin: auto"/>
+<img src="https://i.giphy.com/media/AgO9VR2a9KW1MSP73I/giphy.webp" style="width: 40%;margin-left: 30%;margin-top: -40%">
 </div>
 </div>
 
 ---
+preload: false
+---
+<div v-motion-fade>
 
 # What's tRPC?
 
 let's look at some code
 
+</div>
+---
+preload: false
 ---
 
 # What's tRPC?
+<div v-motion-fade>
 
 - Magic glue to communicate between your frontend and backend
 - No code generation
@@ -267,6 +309,7 @@ let's look at some code
 - Tiny client side footprint
 - Incredilbe DX with TanStack Query, Prisma and Zod
 
+</div>
 
 ---
 
@@ -287,10 +330,15 @@ simplifies complex boilerplate around the stack
 
 </v-clicks>
 ---
+preload: false
+---
+<div v-motion-fade>
 
 # Shoutouts
 ### [Alex](https://twitter.com/alexdotjs), [Sachin](https://twitter.com/s4chinraja) & the team behind [tRPC](https://github.com/trpc/trpc#core-team)
 ### [Theo](https://twitter.com/t3dotgg) & the team building [create-t3-app](https://github.com/t3-oss/create-t3-app)
+
+</div>
 
 ---
 
