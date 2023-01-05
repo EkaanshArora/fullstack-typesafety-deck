@@ -2,8 +2,9 @@ import styles from "./index.module.css";
 import { type NextPage } from "next";
 import Head from "next/head";
 import { trpc } from "../utils/trpc";
-import { PropsWithChildren, useState } from "react";
-import { Example } from "@prisma/client";
+import type { PropsWithChildren } from "react";
+import { useState } from "react";
+import type { Example } from "@prisma/client";
 
 const Home: NextPage = () => {
   const getData = trpc.example.getAll.useQuery();
@@ -12,7 +13,7 @@ const Home: NextPage = () => {
     <Layout>
       <div style={{ display: "flex", flexDirection: "column", margin: "auto", width: "100%" }}>
         {getData.data
-          ? getData.data.map((exampleEntry) => <Item data={exampleEntry} />)
+          ? getData.data.map((exampleEntry) => <Item key={exampleEntry.id} data={exampleEntry} />)
           : "Loading tRPC query..."}
       </div>
       <Buttons />
@@ -42,10 +43,10 @@ const Buttons = () => {
     <div>
       <input value={input} onChange={(e) => setInput(e.target.value)} />
       <button onClick={async () => {
-          await create.mutateAsync({ text: input })
-          setInput('')
-          get.refetch()
-        }} disabled={!input}>
+        await create.mutateAsync({ text: input })
+        setInput('')
+        get.refetch()
+      }} disabled={!input}>
         create
       </button>
       <button onClick={async () => {
