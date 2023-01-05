@@ -1,5 +1,4 @@
 import { z } from "zod";
-
 import { router, publicProcedure } from "../trpc";
 
 export const exampleRouter = router({
@@ -14,11 +13,10 @@ export const exampleRouter = router({
       return {status: 'success'}
     }),
   deleteAll: publicProcedure
-    .input(z.object({ text: z.string().nullish() }).nullish())
-    .mutation(async ({ input, ctx }) => {
+    .mutation(async ({ ctx }) => {
       await ctx.prisma.example.deleteMany({
-        where: {NOT: {message: ''}}
-      })
+        where: { NOT: { message: "" } },
+      });
       return {status: 'success'}
     }),
   getAll: publicProcedure.query(({ ctx }) => {

@@ -4,7 +4,8 @@
   "scripts": {
     "build": "slidev build",
     "dev": "slidev --open",
-    "export": "slidev export"
+    "export": "slidev export",
+    "demo": "cd demo && npm run dev"
   },
   "dependencies": {
     "@iconify/json": "^2.1.58",
