@@ -75,7 +75,7 @@ preload: false
 ```mermaid
 
 flowchart BT
-id1(Database) <-- SQL --> id2(Backend) <-- REST --> id3(Frontend Client)
+id1(Database) <-- Query --> id2(Backend) <-- API --> id3(Frontend Client)
 
 ```
 </div>
@@ -105,7 +105,7 @@ id1(Database) <-- SQL --> id2(Backend) <-- REST --> id3(Frontend Client)
 ```mermaid
 
 flowchart BT
-id1(Database) <-- DBQuery --> id2(Backend) <-- API --> id3(Frontend Client)
+id1(Database) <-- Query --> id2(Backend) <-- API --> id3(Frontend Client)
 
 ```
 </div>
@@ -124,7 +124,7 @@ id1(Database) <-- DBQuery --> id2(Backend) <-- API --> id3(Frontend Client)
 ```mermaid
 
 flowchart BT
-id1(Database) <-- DBQuery --> id2(Backend) <-- API --> id3(Frontend Client)
+id1(Database) <-- Query --> id2(Backend) <-- API --> id3(Frontend Client)
 style id1 stroke:#f00,stroke-width:2px
 style id2 stroke:#f00,stroke-width:2px
 style id3 stroke:#f00,stroke-width:2px
@@ -143,7 +143,7 @@ style id3 stroke:#f00,stroke-width:2px
 ```mermaid
 
 flowchart BT
-id1(Database) <-- DBQuery --> id2(Backend) <-- API --> id3(Frontend Client)
+id1(Database) <-- Query --> id2(Backend) <-- API --> id3(Frontend Client)
 
 ```
 </div>
@@ -298,18 +298,26 @@ preload: false
 
 # How do I get started?
 
-<br><br>
-
+<br>
 <v-clicks>
 
 ```ts
 npx create-t3-app@latest
 ```
+<div>
+<br>
 
-#### TypeScript, Next.js, tRPC, Prisma & NextAuth
+- TypeScript
+- Next.js
+- tRPC
+- Prisma
+- NextAuth
+- Tailwind
 
-simplifies complex boilerplate around the stack
+<br>
+</div>
 
+<i>Simplifies the complex boilerplate setup</i>
 
 </v-clicks>
 ---
@@ -320,6 +328,10 @@ preload: false
 # Shoutouts
 ### [Alex](https://twitter.com/alexdotjs), [Sachin](https://twitter.com/s4chinraja) & the team behind [tRPC](https://github.com/trpc/trpc#core-team)
 ### [Theo](https://twitter.com/t3dotgg) & the team building [create-t3-app](https://github.com/t3-oss/create-t3-app)
+<v-clicks>
+
+### You folks!
+</v-clicks>
 
 </div>
 

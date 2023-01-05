@@ -12,7 +12,7 @@ const Home: NextPage = () => {
     <Layout>
       <div style={{ display: "flex", flexDirection: "column", margin: "auto", width: "100%" }}>
         {getData.data
-          ? getData.data.map((e) => <Item data={e} />)
+          ? getData.data.map((exampleEntry) => <Item data={exampleEntry} />)
           : "Loading tRPC query..."}
       </div>
       <Buttons />
